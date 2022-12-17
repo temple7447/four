@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+     <form>
+         <div class="msg"></div>
+         <input type="text" placeholder="enter something" class="textinfo">
+
+         <input type="text" placeholder="enter something" class="textI">
+         <button type="submit" class="btn" >submit</button>
+         
+
+
+     </form>
+     <ul class="listof"></ul>
+
+     <script>
+         const textinfo = document.querySelector('.textinfo')
+                message = document.querySelector('.textI')
+         document.querySelector('.btn').addEventListener('click',(e)=>{
+            e.preventDefault()
+            if(textinfo.value === '' || message.value === ""){
+                document.querySelector('.msg').textContent = "All field must be entered"
+                document.querySelector('.msg').style.backgroundColor = "red"
+                setTimeout(() => {
+                    document.querySelector('.msg').innerHTML = "" 
+                }, 4000);
+
+            
+            }else{
+                // document.querySelector('.listof').textContent = `${textinfo.value} and ${message.value}`
+                const li = document.createElement('li')
+                li.appendChild(document.createTextNode(`${textinfo.value} and ${message.value}`))
+
+                document.querySelector('.listof').appendChild(li)
+                textinfo.value = "";
+                message.value = ""
+            }
+            
+            
+
+
+         })
+
+     </script>
+
+
+
+</body>
+</html>

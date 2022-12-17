@@ -1,0 +1,64 @@
+@media all (max-width:450px) {
+
+
+body{
+    margin: 0px;
+    height: 100px;
+}
+h1{
+    color: black;
+    font-size: 70px;
+    width: 1500px;
+    padding: 40px;
+    margin: 0;
+    background-color: blueviolet;
+    text-align: center;
+}
+
+
+.animat{
+    position: absolute;
+    margin-top: 2px;
+    font-size: 25px;
+    background:linear-gradient(to left,green,white,red,blue);
+    white-space: nowrap;
+    padding: 10px;
+    animation:animate 60s linear infinite;
+}
+.container{
+    display: flex;
+    margin-top: 50px;
+    flex-direction:column ;
+    flex-wrap:nowrap;
+    justify-items: center;
+    align-items: center;
+    gap: 105px;
+    justify-content:space-around;
+}
+.sub-unit1,
+.sub-unit2,
+.sub-unit3,
+.sub-unit4,
+.sub-unit5,
+.sub-unit6
+{
+    border: 2px solid white;
+    background:linear-gradient(to left,rgb(174, 211, 174),white,rgb(214, 168, 168),rgb(159, 159, 223));
+    padding: 100px;
+    margin: 10px;
+    z-index: 3;
+    text-align: center;
+    border-radius: 15px;
+    
+}
+
+footer{
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+
+}
+}

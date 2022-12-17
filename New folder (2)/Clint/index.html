@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="message_container"></div>
+    <form class="form">
+        <div>
+        <label for="message">MESSAGE</label>
+        <input type="text" class="message"  placeholder="Enter your messages">
+        <button class="mgsbtn" type="submit">SEND</button>
+         </div>
+         <div>
+        <label for="smessage">ROOM</label>
+        <input class="roombtn" type="text" class="room" placeholder="Enter your messages">
+        <button type="submit">SEND</button>
+         </div>
+
+    </form>
+
+    <script src="./index.js"></script>
+    <script src="../server/node_modules/@socket.io/component-emitter/index.js">
+    </script>
+    <script src="../server/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io()
+
+    </script>
+</body>
+</html>

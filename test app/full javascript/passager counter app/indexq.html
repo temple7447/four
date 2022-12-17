@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game counter</title>
+</head>
+<style>
+.container{
+  align-items: center;
+  flex-direction: column;
+}
+.successmsg{
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.failmsg{
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+
+</style>
+<body  style="font-size:20px; font-weight:700;font-family:sans-serif">
+  <div class="container" style="display:flex; justify-content:center; height:100vh; width:100vw;background-color:rgb(41, 40, 40)" >
+    <div class="msg" ></div>
+    <div>
+    <form style="display: flex;flex-direction:column">
+    
+    <label style="text-align: center; color:wheat; margin:10px">NUMBER</label>
+    <input type="text" name="number" style="height: 40px;" class="number" placeholder="enter any number">
+    <button style="margin-top: 10px; padding:10px  ;font-size:20px;" type="submit" class="btn" id="btn" >play</button>
+    </form>
+  </div>
+    <div id="result"></div>
+  </div>
+
+    <script>
+        const msg = document.querySelector('.msg');
+        const btn = document.getElementById('btn')
+        let number = document.querySelector('.number');
+
+        var max =2;
+        var play1;
+        let count = 0
+        let correct = 0
+        let incorrect = 0
+        const details = [{
+        success:{
+          color:'white',
+          background:'green',
+          msg:'the value you enter is correct'
+        },
+        fail:{
+          color:'black',
+          background:'red',
+          msg:`the value ${number.value} you enter is no correct with the ramdon value ${play1}`
+        },
+        playagain:{
+          color:'white',
+          background:'green',
+          msg:'play Again'
+        }}]
+
+        //localStorage.setItem('details', details[0].success.color)
+        
+        
+        
+        
+        btn.addEventListener('click',(e)=> {
+            e.preventDefault()
+          play1 = Math.floor(Math.random() * max) + 1;
+          console.log(play1)
+          const plays = btn.textContent
+          if(plays == 'play Again'){
+            number.style.display = 'block'
+            setTimeout(()=>{
+              number.value = ''
+            },1000)
+          }
+
+          if(play1 ===  parseInt(number.value)){
+            msg.textContent = 'correct and try again'
+            msg.style.color = details[0].success.color
+            msg.style.backgroundColor = details[0].success.background
+            msg.classList.add('successmsg')
+
+            setTimeout(()=>{
+              number.value = ''
+            },1000)
+
+              if(correct =>2){
+                msg.textContent = 'You Win, Will you like to playagin'
+            msg.style.color = details[0].success.color
+            msg.style.backgroundColor = details[0].success.background
+            msg.classList.add('successmsg')
+            number.style.display = 'none'
+            btn.textContent = details[0].playagain.msg
+
+            correct++
+            setTimeout(()=>{
+              number.value = ''
+            },1000)
+            }
+              else if(correct <= 1)
+              {
+                msg.textContent = 'You Lose, Try again'
+                msg.style.color = details[0].success.color
+                msg.style.backgroundColor = details[0].fail.background
+                msg.classList.add('successmsg')
+                correct++
+                setTimeout(()=>{
+                  number.value = ''
+                },1000)
+              }
+               
+          }else
+          if(play1 !== parseInt(number.value))
+          {
+            setTimeout(()=>{
+              number.value = ''
+            },1000)
+            if(incorrect ==3 ){
+              msg.textContent = details[0].fail.msg
+              msg.style.color = details[0].fail.color
+              msg.style.backgroundColor = details[0].fail.background
+              msg.classList.add('failmsg')
+              btn.textContent = details[0].playagain.msg
+              btn.style.color = details[0].fail.color
+              btn.style.backgroundColor = details[0].fail.background
+              incorrect++
+              number.style.display = 'none'
+              setTimeout(()=>{
+                number.value = ''
+              },1000)
+            }
+            
+          }     
+          
+        })
+       
+
+    </script>
+
+</body>
+</html>

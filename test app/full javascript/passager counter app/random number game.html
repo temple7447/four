@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random number generator</title>
+</head>
+<body>
+    <div class="displays">
+hello world
+    </div>
+
+
+
+
+    <script>
+        let randomNumber =Math.floor( Math.random()*6) + 1
+        let randomNumber1 =Math.floor( Math.random()*6) + 1
+        console.log(randomNumber)
+        console.log(randomNumber1)
+
+        const age = [
+            {
+            id:1,
+            name:"oke lesbvhgh i love this"
+            },
+            {
+            id:2,
+            name:"tempe"
+            },
+            {
+            id:3,
+            name:"oke"
+            },
+    ]
+
+   const details= age.map((ages)=>{
+        const {name,id} = ages
+        return `<h1>what is your name ${name}</h1>`
+    })
+    document.querySelector('.displays').innerHTML = details
+
+
+    // const x = 10
+    // const color = x >1 ? "red" : "blue"
+    // console.log(color)
+
+    function Person(firsname,lastname){
+        this.firsname=firsname
+        this.lastname=lastname
+    }
+    const person1 = new Person("temple","efe") 
+    const person2 = new Person("templo","eferurhobo") 
+    console.log(person1)
+    console.log(person2)
+
+
+    </script>
+</body>
+</html>

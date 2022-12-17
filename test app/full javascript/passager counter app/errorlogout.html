@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoe shopping</title>
+</head>
+<body>
+    <div style="background-color: brown; display: flex; flex-direction:column; justify-content: center;align-items: center;">
+        <img  src="" alt="shoes">
+        <h1 style="text-align: center;">Nike shoe</h1>
+        
+        <button style="border-radius: 8px; padding: 10px ;font-size: 20px ;" class="Purchase">Purchase - $149</button>
+        <p class="err"></p>
+       <script>
+           let err = document.querySelector('.err')
+           document.querySelector('.Purchase').addEventListener('click',()=>{
+            err.textContent = "something went wrong during the purchase of the item" 
+
+           
+           })
+       </script>
+    </div>
+</body>
+</html>

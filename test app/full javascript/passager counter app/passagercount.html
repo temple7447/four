@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>passager counter app</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body style="height: 100vh;display: flex; justify-content: center;align-items: center;">
+    <div style="display: block; justify-content: center; align-items: center;padding: 20px; height: 400px;width: auto 0; background-color: rgb(90, 90, 245); ">
+      <div style="text-align: center;margin-top: 30px; font-size: 30px;font-weight: bold;font-family: sans-serif;">People Enter:</div>
+      
+      
+        <!-- display -->
+        <div class="screem" style="text-align: center; margin-top: 20px; font-size: 20px;">3</div>
+        <div style="margin: 20px 0;padding: 20px;gap: 2px; display: flex;flex-direction: column;  ">
+        <button onclick="increase()" style="margin-bottom: 10px; background-color:rgb(95, 10, 10) ;padding: 10px; font-size: 20px; font-weight: bold;">increase</button>
+        <button onclick="save()" style="background-color: green; padding: 10px; font-size: 20px; font-weight: bold;">save</button>
+    </div>
+
+    <!-- displaying the save values -->
+    <div style="text-align: center;" class="addto">
+
+    </div>
+    </div>
+    
+
+
+    <script>
+        let scre= document.querySelector('.screem')
+        const addto = document.querySelector('.addto')
+        // let count = 0
+        mypoint = 3;
+        function increase(){
+            // count+=1
+            // scre.innerText = count;
+            // console.log(count)
+
+            mypoint+=3;
+            scre.innerText = mypoint
+            
+        }
+
+        
+        function save(){
+            // let displaying = count + " - "
+            // addto.textContent += displaying
+            // scre.innerText = 0
+            // count = 0
+            // console.log(`previous values are: ${count}- ${Date.now()}`)
+            mypoint-=1;
+            scre.innerText = mypoint 
+        }
+
+
+        
+    </script>
+</body>
+</html>
